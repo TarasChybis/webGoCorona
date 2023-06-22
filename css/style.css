@@ -1,0 +1,267 @@
+@import url('https://fonts.googleapis.com/css2?family=Raleway:wght@700;800&family=Rubik:wght@400;700&display=swap');
+
+.body {
+   font-family: 'Rubik', sans-serif;
+   font-size: 12px;
+   color: #616161;
+}
+
+.wrapper {
+   display: flex;
+   flex-direction: column;
+   min-height: 100%; /*чтоб main увеличивался и прижал футер книзу*/
+   overflow: hidden;
+}
+
+[class*="_container"] {
+   /* max-width: 1057px; это в макете так */
+   max-width: 1087px; /*с учетом отступов безопасности по 15px*/
+   margin: 0 auto;
+   padding: 0 15px; /*отступы безопасности при адаптиве + добавить к max-width: 1057px+15px+15px = 1087px;*/
+}
+
+
+/* PC - первый брекпоинт */
+
+@media (max-width: 1087px) {    
+   [class*="_container"] {
+      max-width: 970px;
+   }
+}
+
+.header {
+   position: absolute;
+   width: 100%;
+   top: 0;
+   left: 0;
+   z-index: 50;
+}
+
+.header_container {
+   display: flex;
+   min-height: 114px;
+   align-items: center;
+}
+
+.header-logo { 
+   position: relative;
+   z-index: 5;
+}
+
+.header-menu { 
+   flex: 1 1 auto;
+}
+.menu { 
+   display: flex;
+   justify-content: flex-end;
+   margin: 0 40px 0 0;
+}
+.menu-list { 
+   display: flex;
+   gap: 40px;
+}
+
+/* .menu-item { } */
+
+.menu-link { 
+   font-family: 'Raleway', sans-serif;
+   font-size: 10px;
+   line-height: 120%;
+   font-weight: 700;
+   text-transform: uppercase;
+   color: #000000;
+   letter-spacing: 1px;
+}
+
+.menu-link:hover {
+   text-decoration: underline;
+}
+
+.header-button { 
+   position: relative;
+   z-index: 5;
+   flex: 0 0 252px;
+   display: flex;
+   justify-content: flex-end;
+   align-items: center;
+}
+
+.button { 
+   display: inline-block;
+   font-family: 'Raleway', sans-serif;
+   font-size: 10px;
+   line-height: 120%;
+   font-weight: 800;
+   text-transform: uppercase;
+   letter-spacing: 1px;
+   /* letter-spacing: 0.14em; */
+   color: #FCFDFE;
+   padding: 14px 30px;
+   border-radius: 5px;
+   background-color: #EC5863;
+   transition: background-color 0.3s ease 0s; /*замедление изменения цвета*/
+}
+
+.button:hover {
+   background-color: #ee999e;
+}
+
+.button-blue { 
+   background-color: #4285F4;
+}
+
+.button:hover {
+   background-color: #95b7ee;
+}
+
+.close-burger-menu,
+.burger-menu {
+   display: none; /* в адаптивной верстке на ПК бургер нужно скрыть */
+}
+
+
+/* TABLET - второй брекпоинт */
+
+@media screen and (max-width: 991.98px) {
+   [class*="_container"] {
+      max-width: 750px;
+   }
+
+   .header_container {
+      min-height: 80px;
+   }
+
+   .menu-list { 
+      gap: 20px;
+   } 
+    
+   .header-button { 
+      flex: 0 0 170px;
+   }
+}
+
+
+/* MOBILE BIG - третий брекпоинт */
+
+@media screen and (max-width: 767.98px) {
+   [class*="_container"] {
+      max-width: none;
+   }
+
+   .header_container {
+      min-height: 60px;
+   }
+   
+   .menu-body {
+      /*display: none;*/ /* скрываем меню в бургере (Способ 1)*/
+      position: fixed;
+      top: 0;
+      left: -100%;   /* скрываем меню в бургере (Способ 2)*/
+      width: 100%;
+      height: 100%;
+      overflow: auto;
+      background-color: #fff;
+      padding: 90px 15px 30px 15px;
+      transition: left 0.3s ease 0s;  
+   }
+
+   .header:target .menu-body {     /* показываем меню из бургера в момент нажатия*/
+      left: 0; 
+   }
+   .header:target .menu-body:before {    /* прокладка под хедером для сокрытия меню при скроле*/ 
+      content: ""; 
+      position: fixed;
+      top: 0;
+      left: 0;
+      height: 80px;
+      width: 100%;
+      background-color: #fff;
+   }
+
+   .menu-list {
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+   }
+
+   .menu-item { 
+      margin: 0 0 25px 0;
+   }
+
+   .menu-item:last-child { 
+      margin-bottom: 0;
+   }
+
+   .menu-link {
+      font-size: 20px;
+   }
+
+   .burger-menu {
+      position: relative;
+      flex: 0 0 30px;
+      height: 18px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      margin: 0 0 0 20px;
+   }
+   
+   .burger-menu::before,
+   .burger-menu::after {
+      content: "";
+      background-color: #000;
+      height: 2px;
+   }
+   
+   .burger-menu span {
+      background-color: #000000;
+      height: 2px;
+   }
+
+   .close-burger-menu {
+      flex: 0 0 30px;
+      height: 30px;
+      position: relative;
+      margin: 0 0 0 20px;
+   }
+
+   .close-burger-menu::before,
+   .close-burger-menu::after {
+      content: "";
+      background-color: #000;
+      height: 2px;
+      position: absolute;
+      top: 50%;
+      left: 0;
+      width: 100%;
+   }
+   .close-burger-menu::before {
+      transform: rotate(45deg);
+   }
+   .close-burger-menu::after {
+      transform: rotate(-45deg);
+   }
+
+   .header:target .burger-menu {
+      display: none;
+   }
+   .header:target .close-burger-menu {
+      display: flex;
+   }
+}
+
+
+/* MOBILE SMALL - четвертый брекпоинт */
+
+@media screen and (max-width: 479.98px) {
+   .header-logo {
+      flex: 0 0 40px;
+      overflow: hidden;
+   }
+}
+
+/* ------------------ */
+
+.main {
+   flex: 1 1 auto; /*чтоб main увеличивался и прижал футер книзу*/
+}

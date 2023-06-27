@@ -121,11 +121,13 @@
 
 .get-started { 
    background-color: #FAFBFD;
+   min-height: 100vh;
 }
 .get-started_container { 
+   min-height: 100vh;
    padding: 150px 15px 50px 15px;
    display: flex;
-   align-items: center;
+   /* align-items: center; */
    flex-wrap: wrap;
    position: relative;
 }
@@ -144,6 +146,8 @@
 .get-started_content { 
    flex: 0 1 48%;
    padding: 0 20px;
+   margin-bottom: 40px;
+   align-self: center;
 }
 
 .get-started_block-text { 
@@ -391,17 +395,19 @@
 }
 
 
-/* =============section class="stay-safe"====================== */
+/* =========== section class="stay-safe" =================== */
 
 .stay-safe { 
    padding: 0;
+   /* height: 100vh; */
 }
 .stay-safe_container { 
    display: flex;
+   min-height: 100vh;
 }
 .stay-safe_media { 
    flex: 0 1 50%;
-   margin-top: 79px;
+   margin: auto;
 }
 .media-stay-safe { 
    max-width: 338px;
@@ -461,6 +467,8 @@
    flex: 0 1 50%;
    max-width: 379px;
    margin: 231px auto;
+   display: flex;
+   align-items: center;
 }
 .stay-safe_content .block-text_text {
    font-size: 12px;
@@ -501,3 +509,149 @@
    }
 }
 
+/* ============ section class="experts ===================== */
+
+.experts { 
+   background-color: #FAFBFD;
+   padding: 104px 0 0 0;
+   min-height: 100vh;
+}
+
+.statistics-experts { 
+   max-width: 655px;
+   margin: 0 auto;
+   position: relative;
+}
+.statistics-experts_body { 
+   position: relative;
+   background-color: #fff;
+   border-radius: 16px;
+   box-shadow: 0px 2px 24px 0px rgba(88, 126, 236, 0.15);
+   z-index: 2;
+   margin: 0 0 130px 0;
+}
+
+.statistics-experts_decor { 
+   position: absolute;
+   background-color: #EC5863;
+}
+.statistics-experts_decor_1 { 
+   width: 65.752px;
+   height: 65.752px;
+   transform: rotate(-30deg);
+   border-radius: 16px;
+   bottom: -21px;
+   left: -21px;
+}
+.statistics-experts_decor_2 { 
+   width: 96.956px;
+   height: 96.956px;
+   transform: rotate(105deg);
+   border-radius: 30px;
+   left: 210px;
+   top: -40px;
+}
+.statistics-experts_decor_3 { 
+   width: 127.467px;
+   height: 127.467px;
+   transform: rotate(-30deg);
+   border-radius: 30px;
+   right: -65px;
+   top: -4px;
+}
+
+.body-statistics-experts { 
+   padding: 25px 60px;
+   display: flex;
+   justify-content: space-evenly;
+   align-items: center;
+}
+.body-statistics-experts_item { 
+   flex: 0 1 25%;
+   text-align: center;
+}
+.body-statistics-experts_item:last-child { 
+   flex: 0 1 50%;
+}
+.body-statistics-experts_value { 
+   font-family: 'Rubik', sans-serif;
+   font-weight: 700;
+   font-size: 36px;
+   line-height: 1.2;
+   letter-spacing: 1.1px;
+   color: #EC5863;
+   margin-bottom: 5px;
+}
+.body-statistics-experts_text { 
+   font-family: 'Rubik', sans-serif;
+   font-weight: 700;
+   font-size: 11px;
+   line-height: 1.8;
+   letter-spacing: 4.07px;
+   color: #000;
+   text-align: center;
+   text-transform: uppercase;
+}
+
+.experts_body { 
+   display: flex;
+   align-items: center;
+}
+.experts_content {
+   flex: 0 1 50%;
+   padding: 0 20px 0 0;
+}
+.experts_block-text {
+   max-width: 400px;
+   padding-left: 40px;
+}
+
+.experts_video {
+   flex: 0 1 50%;
+   padding: 0 0 30% 0;
+   position: relative;
+   box-shadow: 0px 4px 18px 0px rgba(88, 126, 236, 0.18);
+   border-radius: 8px;
+   overflow: hidden;
+}
+.experts_video iframe {
+   position: absolute;
+   width: 100%;
+   height: 100%;
+   top: 0;
+   left: 0;
+   object-fit: cover;
+}
+
+@media screen and (max-width: 767.98px) {
+   .experts { 
+      padding: 80px 0 30px 0;
+   }
+   .statistics-experts_body { 
+      margin: 0 0 50px 0;
+   }
+   .body-statistics-experts { 
+      padding: 25px;
+   }
+   .experts_body { 
+      flex-direction: column;
+      align-items: stretch;
+   }
+   .experts_content {
+      padding: 0;
+      margin: 0 0 30px 0;
+   }
+   .experts_video {
+      padding: 0 0 58% 0;
+      position: relative;
+   }
+}
+
+@media screen and (max-width: 479.98px) {
+   .body-statistics-experts { 
+      flex-direction: column;
+   }
+   .body-statistics-experts_item:not(:last-child) { 
+      margin: 0 0 15px 0;
+   }
+}

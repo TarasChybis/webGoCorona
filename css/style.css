@@ -89,6 +89,7 @@
    /* letter-spacing: 0.14em; */
    color: #FCFDFE;
    padding: 14px 30px;
+   margin-top: 24px;
    border-radius: 5px;
    background-color: #EC5863;
    transition: background-color 0.3s ease 0s; /*замедление изменения цвета*/
